@@ -1,0 +1,22 @@
+# The binding circle reads this. Nothing a minion does can leave this scope.
+scope:
+  # Allowed targets. CIDRs and bare hostnames/IPs both work.
+  allow:
+    - 127.0.0.1
+    - 127.0.0.1/32
+  # Ports a recon minion may touch on an in-scope target.
+  ports:
+    - 3000   # Juice Shop
+    - 80
+    - 443
+    - 8080
+
+policy:
+  # Active actions (anything that touches a target) are gated.
+  # "prompt"  -> ask the necromancer at the terminal
+  # "deny"    -> refuse all active actions (dry run)
+  # "auto"    -> approve automatically (use only against your own lab)
+  active_actions: prompt
+
+phylactery:
+  path: phylactery.db

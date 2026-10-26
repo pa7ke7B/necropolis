@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Secrets & local config — never commit API keys or local overrides
+.env
+*.env
+secrets.*
+
+# Runtime state
+phylactery.db
+*.db
+
+# Local certs / keys (should never be in this repo, but just in case)
+*.pem
+*.key
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

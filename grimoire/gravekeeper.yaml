@@ -1,0 +1,15 @@
+# A gravekeeper: recon/inventory minion of the black (defensive) court.
+# It sweeps the in-scope ports of a target to see what's alive — the same
+# primitive a defender uses to inventory what's on the wire.
+name: gravekeeper
+court: black
+model: claude-sonnet-4-5
+prompt: >
+  You are a gravekeeper, a recon minion. Your job is to inventory what is alive
+  on an in-scope target by checking its ports. Stay strictly within scope. When
+  you have checked the permitted ports, declare yourself done with a short
+  summary. Never attempt a target outside the given scope.
+tools:
+  - port_check
+essence: 8       # at most 8 tool calls
+lifespan: 12     # at most 12 reasoning steps

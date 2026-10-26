@@ -1,0 +1,3 @@
+pyyaml>=6.0
+# Optional real brain. Offline brain needs nothing but the stdlib.
+anthropic>=0.40.0
